@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+  get 'pages/services'
+  get 'pages/customers'
   resources :logs
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

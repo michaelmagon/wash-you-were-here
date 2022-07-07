@@ -27,6 +27,16 @@
   </div>
 
   <div>
+    <%= form.label :'date', style: "display: block" %>
+    <%= form.date_select :dateinstructed %>
+  </div>
+
+  <div>
+    <%= form.label :'status', style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
