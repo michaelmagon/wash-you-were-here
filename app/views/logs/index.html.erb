@@ -2,13 +2,31 @@
 
 <h1>Logs</h1>
 
-<div id="logs">
-  <% @logs.each do |log| %>
-    <%= render log %>
-    <p>
-      <%= link_to "Show this log", log %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>log Title</th>
+      <th>Car Model</th>
+      <th>Service Availed</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.title.upcase %></td>
+        <td><%= log.model %></td>
+        <td><%= log.service %></td>
+        <td><%= log.status %></td>
+        <td><%= log.body %></td>
+        <td><%= link_to "Show this log", log %></td>
+        
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New log", new_log_path %>
