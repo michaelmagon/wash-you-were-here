@@ -2,13 +2,37 @@
 
 <h1>Services</h1>
 
-<div id="services">
-  <% @services.each do |service| %>
-    <%= render service %>
-    <p>
-      <%= link_to "Show this service", service %>
-    </p>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <div class="container">
+        <div class="row">
+          <th class="col-3">Service</th>
+          <th class="col-2">Code</th>
+          <th class="col-2">Price</th>
+          <th class="col-2">Description</th>
+
+        </div>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    <% @services.each do |service| %>
+      <tr>
+        <div class="container">
+          <div class="row">
+            <td class="col-3"><%= service.title.upcase %></td>
+            <td class="col-2"><%= service.body %></td>
+            <td class="col-2"><%= service.price %></td>
+            <td class="col-2"><%= service.description %></td>
+            <td class="col-1"><%= link_to "Show this service", service %></td>
+        </div>
+      </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <%= link_to "New service", new_service_path %>
+
+
