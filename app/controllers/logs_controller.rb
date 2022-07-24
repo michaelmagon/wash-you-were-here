@@ -23,6 +23,9 @@ class LogsController < ApplicationController
   def create
     @log = Log.new(log_params)
 
+    # @service = Log.find(service_id)
+    # @log = service.logs.new(log_params)
+
     respond_to do |format|
       if @log.save
         format.html { redirect_to log_url(@log), notice: "Log was successfully created." }
@@ -65,6 +68,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:title, :body, :model, :service, :status)
+      params.require(:log).permit(:title, :body, :model, :service_id, :status)
     end
 end

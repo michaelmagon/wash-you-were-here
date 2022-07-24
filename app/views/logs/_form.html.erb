@@ -21,9 +21,11 @@
     <%= form.text_area :model %>
   </div>
 
-  <div>
-    <%= form.label :service, style: "display: block" %>
-    <%= form.text_area :service %>
+  <div class="control-group">
+    <%= form.label :service, class: 'control-group' %>
+    <div class="controls">
+      <%= collection_select( :logs, :service_id, Service.all, :id, :title, {}, { :multiple => false})%>
+    </div>
   </div>
 
   <div>
