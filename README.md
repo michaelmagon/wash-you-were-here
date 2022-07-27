@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+* Contribution Guide
+  - Branch name must follow syntax [firstNameInitial/clikupTicketNumber-short-description]
