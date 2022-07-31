@@ -5,25 +5,31 @@
 <table>
   <thead>
     <tr>
-      <th>log Title</th>
-      <th>Car Model</th>
-      <th>Service Availed</th>
-      <th>Status</th>
-      <th>Date</th>
-      <th colspan="4"></th>
+      <div class="container">
+        <div class="row">
+          <th class="col-3">Name</th>
+          <th class="col-2">Car Model</th>
+          <th class="col-2">Service Availed</th>
+          <th class="col-2">Status</th>
+          <th class="col-2">Date</th>
+          <th colspan="1"></th>
+        </div>
+      </div>
     </tr>
   </thead>
   <tbody>
     <% @logs.each do |log| %>
       <tr>
-        <td><%= log.title.upcase %></td>
-        <td><%= log.model %></td>
-        <td><%= log.service %></td>
-        <td><%= log.status %></td>
-        <td><%= log.body %></td>
-        <td><%= link_to "Show this log", log %></td>
-        
-        
+        <div class="container">
+          <div class="row">
+            <td class="col-3"><%= log.title.upcase %></td>
+            <td class="col-2"><%= log.model %></td>
+            <td class="col-2"><%= log.service_id %></td>
+            <td class="col-2"><%= log.status %></td>
+            <td class="col-2"><%= log.dateinstructed %></td>
+            <td class="col-1"><%= link_to "Show this log", log %></td>
+        </div>
+      </div>
       </tr>
     <% end %>
   </tbody>
