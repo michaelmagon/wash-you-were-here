@@ -24,7 +24,7 @@
   <div class="control-group">
     <%= form.label :service, class: 'control-group' %>
     <div class="controls">
-      <%= collection_select( :logs, :service_id, Service.all, :id, :title, {}, { :multiple => false})%>
+      <%= collection_select( :log, :service_id, Service.all, :id, :title, {}, { :multiple => false})%>
     </div>
   </div>
 
