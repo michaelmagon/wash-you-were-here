@@ -28,6 +28,11 @@
     </div>
   </div>
 
+  <% Log::TAGS.each do |key| %>
+    <%= form.check_box :tags, { multiple: true }, key, nil %>
+    <%= form.label key %>
+  <% end %>
+
   <div>
     <%= form.label :date, style: "display: block" %>
     <%= form.date_select :dateinstructed %>
