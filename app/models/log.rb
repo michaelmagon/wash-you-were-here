@@ -1,6 +1,6 @@
 class Log < ApplicationRecord
     # belongs_to :service, optional: true
     # TAGS = %i[in out in-and-out]
-    has_many :service_availeds
-    has_many :services, through: :service_availeds
+    has_many :availed_services
+    has_many :services, through: :availed_services
 end

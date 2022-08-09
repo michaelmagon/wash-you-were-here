@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_04_161146) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_07_035835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availed_services", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "log_id"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "carwashes", force: :cascade do |t|
     t.string "title"
@@ -31,15 +40,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_04_161146) do
     t.date "dateinstructed"
     t.integer "service_id"
     t.text "tags", default: [], array: true
-  end
-
-  create_table "service_availeds", force: :cascade do |t|
-    t.string "title"
-    t.text "desecription"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "log_id"
-    t.integer "service_id"
   end
 
   create_table "services", force: :cascade do |t|
