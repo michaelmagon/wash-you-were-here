@@ -1,0 +1,40 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <div class="container">
+        <div class="row">
+          <th class="col-1">First Name</th>
+          <th class="col-1">Surname</th>
+          <th class="col-1">Email</th>
+          <th class="col-1">Phone Number</th>
+          <th class="col-1">Secondary Phone Number</th>
+          <th class="col-2">Address</th>
+          <th colspan="1"></th>
+        </div>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <div class="container">
+          <div class="row">
+            <td class="col-1"><%= customer.first_name %></td>
+            <td class="col-1"><%= customer.last_name %></td>
+            <td class="col-1"><%= customer.email %></td>
+            <td class="col-1"><%= customer.phone_number %></td>
+            <td class="col-1"><%= customer.secondary_phone_number %></td>
+            <td class="col-2"><%= customer.address %></td>
+            <td class="col-1"><%= link_to "Show this customer", customer %></td>
+        </div>
+      </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New customer", new_customer_path %>
