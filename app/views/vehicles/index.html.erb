@@ -1,0 +1,41 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Vehicles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <div class="container">
+        <div class="row">
+          <th class="col-1">Make</th>
+          <th class="col-1">Model</th>
+          <th class="col-1">Color</th>
+          <th class="col-1">Customer ID</th>
+          <th class="col-1">Plate Number</th>
+          <th class="col-2">Description</th>
+          <th colspan="1"></th>
+        </div>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    <% @vehicles.each do |vehicle| %>
+      <tr>
+        <div class="container">
+          <div class="row">
+            <td class="col-1"><%= vehicle.make %></td>
+            <td class="col-1"><%= vehicle.model %></td>
+            <td class="col-1"><%= vehicle.color %></td>
+            <td class="col-1"><%= vehicle.customer_id %></td>
+            <td class="col-1"><%= vehicle.plates %></td>
+            <td class="col-2"><%= vehicle.description %></td>
+            <td class="col-1"><%= link_to "Show this vehicle", vehicle %></td>
+        </div>
+      </div>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<%= link_to "New vehicle", new_vehicle_path %>
