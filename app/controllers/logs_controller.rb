@@ -22,6 +22,7 @@ class LogsController < ApplicationController
   # POST /logs or /logs.json
   def create
     @log = Log.new(log_params)
+    Rails.logger.error "new logger"
     puts "======================================="
     Rails.logger.error log_params.inspect
     # @service = Log.find(service_id)
