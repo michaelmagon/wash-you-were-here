@@ -27,8 +27,8 @@
   </div>
 
   <div>
-    <%= form.label :customer_id, style: "display: block" %>
-    <%= form.number_field :customer_id %>
+    <%= form.label :customer, style: "display: block" %>
+    <%= collection_select(:vehicle, :customer_id, Customer.all, :id, :display_name, prompt: true) %>
   </div>
 
   <div>
