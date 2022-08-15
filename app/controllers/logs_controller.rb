@@ -22,11 +22,6 @@ class LogsController < ApplicationController
   # POST /logs or /logs.json
   def create
     @log = Log.new(log_params)
-    Rails.logger.error "new logger"
-    puts "======================================="
-    Rails.logger.error log_params.inspect
-    # @service = Log.find(service_id)
-    # @log = service.logs.new(log_params)
 
     respond_to do |format|
       if @log.save
@@ -70,6 +65,6 @@ class LogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def log_params
-      params.require(:log).permit(:title, :body, :model, :service_id, :status)
+      params.require(:log).permit(:title, :body, :model, :service_id, :status, service_ids: [], tags: [])
     end
 end

@@ -10,6 +10,7 @@
           <th class="col-3">Name</th>
           <th class="col-2">Car Model</th>
           <th class="col-2">Service Availed</th>
+          <th class="col-2">Service Availed</th>
           <th class="col-2">Status</th>
           <th class="col-2">Date</th>
           <th colspan="1"></th>
@@ -24,7 +25,8 @@
           <div class="row">
             <td class="col-3"><%= log.title.upcase %></td>
             <td class="col-2"><%= log.model %></td>
-            <td class="col-2"><%= log.service&.title %></td>
+            <td class="col-2"><%= log.availed_services.to_sentence %></td>
+            <td class="col-2"><%= log.service_ids.to_sentence %></td>
             <td class="col-2"><%= log.status %></td>
             <td class="col-2"><%= log.dateinstructed %></td>
             <td class="col-1"><%= link_to "Show this log", log %></td>

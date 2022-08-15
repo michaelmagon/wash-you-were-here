@@ -21,11 +21,13 @@
     <%= form.text_area :model %>
   </div>
 
-  <div class="control-group">
-    <%= form.label :service, class: 'control-group' %>
-    <div class="controls">
-      <%= collection_select( :log, :service_id, Service.all, :id, :title, {}, { :multiple => false})%>
-    </div>
+  <div class="field">
+      <%= form.label :services, style: "display: block" %>
+      <%= hidden_field_tag "log[service_ids][]", nil%>
+    <% Service.all.each do |service|%>
+      <%= check_box_tag "log[service_ids][]", service.id, @log.service_ids.include?(service.id), id: dom_id(service)%>
+      <%= label_tag dom_id(service), service.title%><br>
+    <% end %>
   </div>
 
   <div>
