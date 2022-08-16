@@ -13,7 +13,7 @@
 
   <div>
     <%= form.label :customer, style: "display: block" %>
-    <%= collection_select(:log, :customer_id, Customer.all, :id, :display_name, prompt: true) %>
+    <%= collection_select(:log, :title, Customer.all, :id, :display_name, prompt: true) %>
   </div>
 
   <div>
@@ -32,7 +32,7 @@
 
   <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.date_select :dateinstructed %>
+    <%= form.date_select :service_date %>
   </div>
 
   <div>
