@@ -2,6 +2,40 @@
 
 <%= render @customer %>
 
+<br>
+
+<h3>Vehicles</h3>
+
+<table>
+  <thead>
+    <tr>
+      <div class="container">
+        <div class="row">
+          <th class="col-1">Make</th>
+          <th class="col-1">Model</th>
+          <th class="col-1">Color</th>
+          <th class="col-1">Plate Number</th>
+          <th class="col-1">Description</th>
+          <th colspan="1"></th>
+        </div>
+      </div>
+    </tr>
+  </thead>
+  <tbody>
+    <div class="container">
+      <tr>
+        <div class="row">
+            <td class="col-1"><%= @customer.owned_vehicles_make %></td>
+            <td class="col-1"><%= @customer.owned_vehicles %></td>
+            <td class="col-1"><%= @customer.owned_vehicles_color %></td>
+            <td class="col-1"><%= @customer.owned_vehicles_plate %></td>
+            <td class="col-1"><%= @customer.owned_vehicles_desc %></td>
+        </div>
+      </tr>
+    </div>
+  </tbody>
+</table>
+
 <div>
   <%= link_to "Edit this customer", edit_customer_path(@customer) %> |
   <%= link_to "Back to customers", customers_path %>
