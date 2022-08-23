@@ -4,11 +4,18 @@ class Log < ApplicationRecord
     has_many :availed_services
     has_many :services, through: :availed_services
 
-    has_many :customers
     belongs_to :customer, optional: true
+    belongs_to :vehicle, optional: true
 
     def display_services
         services.map(&:title).join(', ')
     end
 
+    def display_customer
+        customer&.display_name
+    end
+
+    def display_vehicle
+        vehicle&.model
+    end
 end
