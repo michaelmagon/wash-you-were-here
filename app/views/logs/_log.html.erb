@@ -1,12 +1,12 @@
 <div id="<%= dom_id log %>">
   <p>
     <strong>Customer:</strong>
-    <%= log.title %>
+    <%= log.display_customer %>
   </p>
 
   <p>
     <strong>Car Model:</strong>
-    <%= log.model %>
+    <%= log.display_vehicle %>
   </p>
   <p>
     <strong>Service Availed:</strong>
@@ -15,6 +15,10 @@
   <p>
     <strong>Status:</strong>
     <%= log.status %>
+  </p>
+  <p>
+    <strong>Date:</strong>
+    <%= log.service_date&.strftime("%m-%d-%Y") %>
   </p>
 
 </div>

@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :customer, style: "display: block" %>
+    <%= collection_select(:log, :customer_id, Customer.all, :id, :display_name, prompt: true) %>
   </div>
 
   <div>
     <%= form.label :car, style: "display: block" %>
-    <%= form.text_area :model %>
+    <%= collection_select(:log, :vehicle_id, Vehicle.all, :id, :display_model, prompt: true)%>
   </div>
 
   <div class="field">
@@ -32,7 +32,7 @@
 
   <div>
     <%= form.label :date, style: "display: block" %>
-    <%= form.date_select :dateinstructed %>
+    <%= form.date_select :service_date %>
   </div>
 
   <div>
