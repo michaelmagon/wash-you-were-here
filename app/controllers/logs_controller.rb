@@ -3,7 +3,9 @@ class LogsController < ApplicationController
 
   # GET /logs or /logs.json
   def index
-    @logs = Log.all
+    @logs = Log
+      .all
+      .page(params[:page] || 1)
   end
 
   # GET /logs/1 or /logs/1.json

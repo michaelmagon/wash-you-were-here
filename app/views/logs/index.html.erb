@@ -2,6 +2,10 @@
 
 <h1>Logs</h1>
 
+<%= Log.count %>
+
+<%= paginate @logs %>
+
 <table>
   <thead>
     <tr>
@@ -34,5 +38,8 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @logs %>
+
 
 <%= link_to "New log", new_log_path %>
