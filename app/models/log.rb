@@ -19,4 +19,8 @@ class Log < ApplicationRecord
     def display_vehicle
         vehicle&.model
     end
+
+    def display_price
+        services.map(&:rate)
+    end
 end
