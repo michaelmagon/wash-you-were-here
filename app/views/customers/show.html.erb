@@ -23,15 +23,17 @@
   </thead>
   <tbody>
     <div class="container">
+      <% @customer.vehicles.each do |vehicle| %>
       <tr>
         <div class="row">
-            <td class="col-1"><%= @customer.owned_vehicles_make %></td>
-            <td class="col-1"><%= @customer.owned_vehicles %></td>
-            <td class="col-1"><%= @customer.owned_vehicles_color %></td>
-            <td class="col-1"><%= @customer.owned_vehicles_plate %></td>
-            <td class="col-1"><%= @customer.owned_vehicles_desc %></td>
+            <td class="col-1"><%= vehicle.make %></td>
+            <td class="col-1"><%= vehicle.model %></td>
+            <td class="col-1"><%= vehicle.color %></td>
+            <td class="col-1"><%= vehicle.plates %></td>
+            <td class="col-1"><%= vehicle.description %></td>
         </div>
       </tr>
+      <% end %>
     </div>
   </tbody>
 </table>

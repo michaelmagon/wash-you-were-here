@@ -25,7 +25,7 @@
       <%= form.label :services, style: "display: block" %>
       <%= hidden_field_tag "log[service_ids][]", nil%>
     <% Service.all.each do |service|%>
-      <%= check_box_tag "log[service_ids][]", service.id, @log.services.include?(service), id: dom_id(service) %>
+      <%= check_box_tag "log[service_ids][]", service.id, @log.services.include?(service), id: dom_id(service)%>
       <%= label_tag dom_id(service), service.title%><br>
     <% end %>
   </div>

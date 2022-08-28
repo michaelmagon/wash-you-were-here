@@ -11,11 +11,12 @@
     <tr>
       <div class="container">
         <div class="row">
-          <th class="col-3">Name</th>
+          <th class="col-2">Name</th>
           <th class="col-2">Car Model</th>
           <th class="col-3">Service Availed</th>
           <th class="col-1">Status</th>
           <th class="col-2">Date</th>
+          <th class="col-1">Total</th>
           <th colspan="1"></th>
         </div>
       </div>
@@ -26,11 +27,12 @@
       <tr>
         <div class="container">
           <div class="row">
-            <td class="col-3"><%= log.display_customer %></td>
+            <td class="col-2"><%= log.display_customer %></td>
             <td class="col-2"><%= log.display_vehicle %></td>
             <td class="col-3"><%= log.display_services %></td>
             <td class="col-1"><%= log.status %></td>
             <td class="col-2"><%= log.service_date&.strftime("%m-%d-%Y") %></td>
+            <td class="col-1"><%= log.display_price %></td>
             <td class="col-1"><%= link_to "Show this log", log %></td>
         </div>
       </div>
