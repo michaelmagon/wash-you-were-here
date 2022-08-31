@@ -8,6 +8,8 @@ class Log < ApplicationRecord
     belongs_to :customer, optional: true
     belongs_to :vehicle, optional: true
 
+    validates :customer_id, :vehicle_id, :services, :presence => true
+
     def display_services
         services.map(&:title).join(', ')
     end
