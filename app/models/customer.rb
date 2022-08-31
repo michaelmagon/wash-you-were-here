@@ -2,6 +2,8 @@ class Customer < ApplicationRecord
     has_many :vehicles
     has_many :logs
 
+    validates :first_name, :last_name, :email, :phone_number, :secondary_phone_number, :address, :presence => true
+    
     def display_name
         "#{first_name} #{last_name}"
     end
