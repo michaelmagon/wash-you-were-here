@@ -7,4 +7,8 @@ class Vehicle < ApplicationRecord
     def display_model
         "#{model}"
     end
+
+    def display_owner
+        customer&.display_name
+    end
 end

@@ -10,12 +10,18 @@
   </p>
   <p>
     <strong>Service Availed:</strong>
-    <%= log.service_ids.to_sentence %>
+    <%= log.display_services %>
   </p>
   <p>
     <strong>Status:</strong>
     <%= log.status %>
   </p>
+
+  <p>
+    <strong>Total Price:</strong>
+    <%= log.display_price %>
+  </p>
+
   <p>
     <strong>Date:</strong>
     <%= log.service_date&.strftime("%m-%d-%Y") %>

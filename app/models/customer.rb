@@ -28,4 +28,8 @@ class Customer < ApplicationRecord
         vehicles.map(&:description).join(', ')
     end
 
+    def last_service_date
+        return "No Record" if logs.count == 0
+        logs.last.service_date.strftime("%m/%d/%Y")
+    end
 end
