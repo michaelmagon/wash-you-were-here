@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: CarwashSystem_production
-  username: CarwashSystem
-  password: <%= ENV["CARWASHSYSTEM_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
