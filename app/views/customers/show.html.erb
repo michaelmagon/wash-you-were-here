@@ -22,19 +22,29 @@
     </tr>
   </thead>
   <tbody>
-    <div class="container">
-      <% @customer.vehicles.each do |vehicle| %>
-      <tr>
-        <div class="row">
-            <td class="col-1"><%= vehicle.make %></td>
-            <td class="col-1"><%= vehicle.model %></td>
-            <td class="col-1"><%= vehicle.color %></td>
-            <td class="col-1"><%= vehicle.plates %></td>
-            <td class="col-1"><%= vehicle.description %></td>
-        </div>
-      </tr>
-      <% end %>
-    </div>
+    <% if @customer.vehicles.empty? %>
+      <div class="container">
+          <tr>
+            <div class="row">
+                <td class=""><button><%= link_to "New vehicle", new_vehicle_path %></button></td>
+            </div>
+          </tr>
+      </div>
+    <% else %>
+      <div class="container">
+        <% @customer.vehicles.each do |vehicle| %>
+          <tr>
+            <div class="row">
+                <td class="col-1"><%= vehicle.make %></td>
+                <td class="col-1"><%= vehicle.model %></td>
+                <td class="col-1"><%= vehicle.color %></td>
+                <td class="col-1"><%= vehicle.plates %></td>
+                <td class="col-1"><%= vehicle.description %></td>
+            </div>
+          </tr>
+        <% end %>
+      </div>
+    <% end %>
   </tbody>
 </table>
 
