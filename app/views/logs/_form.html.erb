@@ -37,7 +37,7 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_area :status %>
+    <%= select_tag :status, options_for_select(Log.statuses) %>
   </div>
 
   <div>

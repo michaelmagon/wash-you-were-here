@@ -8,6 +8,10 @@ class Log < ApplicationRecord
     belongs_to :customer, optional: true
     belongs_to :vehicle, optional: true
 
+    STATUS = %i[paid unpaid partially_paid]
+
+    enum status: { paid: 0, unpaid: 1, partially_paid: 2 }
+
     validates :customer_id, :vehicle_id, :services, :presence => true
 
     def display_services
