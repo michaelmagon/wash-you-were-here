@@ -37,7 +37,9 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= select_tag :status, options_for_select(Log.statuses) %>
+    <%= select_tag :status, options_for_select(Log.statuses) %><%# trial 1 %>
+    
+    <%= select_tag :status, options_for_select(Log.statuses.map {|k, v| [k.humanize, v]}) %><%# trial 2 %>
   </div>
 
   <div>
