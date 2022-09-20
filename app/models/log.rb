@@ -10,7 +10,7 @@ class Log < ApplicationRecord
 
     STATUS = %i[paid unpaid partially_paid]
 
-    enum status: { paid: 0, unpaid: 1, partially_paid: 2 }
+    enum status: [:unpaid, :paid, :void]
 
     validates :customer_id, :vehicle_id, :services, :presence => true
 
