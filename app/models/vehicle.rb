@@ -14,7 +14,4 @@ class Vehicle < ApplicationRecord
         customer&.display_name
     end
 
-    def image_cover
-        self.vehicle_source ? self.vehicle_source : "https://picsum.photos/750/300"
-    end
 end

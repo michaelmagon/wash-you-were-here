@@ -29,4 +29,9 @@
     <%= vehicle.description %>
   </p>
 
+  <p>
+    <strong>Image:</strong>
+  </p>
+    <%= image_tag @vehicle.vehicle_source.url, class: "vehicle-show" %>
+
 </div>

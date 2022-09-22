@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ img.vehicle-show {
+    width: 400px;
+    height: auto;
+ }
