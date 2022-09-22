@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_09_181605) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_21_231824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,12 +23,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_181605) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "carwashes", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.integer "phone_number"
-    t.integer "secondary_phone_number"
+    t.string "phone_number"
+    t.string "secondary_phone_number"
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -40,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_181605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "model"
-    t.text "status"
+    t.integer "status", default: 0
     t.date "dateinstructed"
     t.integer "service_id"
     t.text "tags", default: [], array: true
@@ -69,6 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_09_181605) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "vehicle_source"
   end
 
 end

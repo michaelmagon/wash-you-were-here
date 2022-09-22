@@ -37,7 +37,8 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.text_area :status %>
+    
+    <%= form.select :status, Log.statuses.keys.map %>
   </div>
 
   <div>
