@@ -8,21 +8,25 @@ class Log < ApplicationRecord
     belongs_to :customer, optional: true
     belongs_to :vehicle, optional: true
 
+    STATUS = %i[paid unpaid partially_paid]
+
+    enum status: [:unpaid, :paid, :void]
+
     validates :customer_id, :vehicle_id, :services, :presence => true
 
     def display_services
-        services.map(&:title).join(', ')
+      services.map(&:title).join(', ')
     end
 
     def display_customer
-        customer&.display_name
+      customer&.display_name
     end
 
     def display_vehicle
-        vehicle&.model
+      vehicle&.model
     end
 
     def display_price
-        services.map(&:rate)
+      services.sum(:rate)
     end
 end
